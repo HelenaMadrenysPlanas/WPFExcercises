@@ -1,0 +1,28 @@
+﻿<Window x:Class="Examen2_HelenaMadrenysPlanas.Exercici1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Examen2_HelenaMadrenysPlanas"
+        mc:Ignorable="d"
+        Title="Exercici1" Height="300" Width="400">
+    <!--Creem el control template com a recurs-->
+    <Window.Resources>
+        <ControlTemplate TargetType="{x:Type TextBox}" x:Key="txtTemplate">
+            <!--Fem binding del BorderBrush per a poder-lo editar més andevant-->
+            <Border CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Height="50" Width="200">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source=".\Recursos\Img.png" Margin="5,0,10,0"/>
+                    <TextBox Height="30" Width="100" BorderThickness="0"/>
+                </StackPanel>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <StackPanel>
+            <TextBox Name="txt1" Template="{StaticResource txtTemplate}" Margin="10,10,10,10" BorderBrush="Red"/>
+            <TextBox Name="txt2" Template="{StaticResource txtTemplate}" Margin="10,10,10,10" BorderBrush="Black"/>
+        </StackPanel>
+    </Grid>
+</Window>

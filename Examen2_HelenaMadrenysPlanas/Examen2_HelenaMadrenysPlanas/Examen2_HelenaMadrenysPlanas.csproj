@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Recursos\Img.png" />
+    <None Remove="Recursos\lois.png" />
+    <None Remove="Recursos\megan.jpg" />
+    <None Remove="Recursos\peter.jpg" />
+    <None Remove="Recursos\stewie.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recursos\Img.png" />
+    <Resource Include="Recursos\lois.png" />
+    <Resource Include="Recursos\megan.jpg" />
+    <Resource Include="Recursos\peter.jpg" />
+    <Resource Include="Recursos\stewie.jpg" />
+  </ItemGroup>
+
+</Project>

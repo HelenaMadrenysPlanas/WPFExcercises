@@ -1,0 +1,22 @@
+﻿<Window x:Class="Examen2_HelenaMadrenysPlanas.Exercici2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Examen2_HelenaMadrenysPlanas"
+        mc:Ignorable="d"
+        Title="Exercici2" Height="300" Width="500">
+    <!--Busquem el converter que hem creat com a recurs-->
+    <Window.Resources>
+        <local:FloatToColor x:Key="FloatToColor"/>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <Slider x:Name="slider" Margin="10,10,10,10" Maximum="100" Minimum="0"/>
+            <!--Fem binding amb l'Slider i li fem un propertychanged per a que ens canviï inmediatament-->
+            <TextBlock Name="txtSize" Margin="10,10,10,10" Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--Fem binding amb l'Slider i li passem el converter creat-->
+            <Rectangle Name="rectangle" Width="30" Height="30" Margin="10,10,10,10" Fill="{Binding ElementName=slider, Path=Value, Mode=OneWay, Converter={StaticResource FloatToColor}}"/>
+        </StackPanel>
+    </Grid>
+</Window>

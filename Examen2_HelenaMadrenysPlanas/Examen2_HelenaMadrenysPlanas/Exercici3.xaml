@@ -1,0 +1,28 @@
+﻿<Window x:Class="Examen2_HelenaMadrenysPlanas.Exercici3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Examen2_HelenaMadrenysPlanas"
+        mc:Ignorable="d"
+        Title="Exercici3" Height="450" Width="400">
+    <Grid>
+        <ListView Name="listView" Margin="10,10,10,10" HorizontalAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Label Content="Dades Alumne" FontWeight="Bold"/>
+                            <Separator/>
+                            <!--Passem les dades i la imatge per Binding amb la classe-->
+                            <TextBlock Name="txtNom" Text="{Binding Nom}"/>
+                            <TextBlock Name="txtCognom" Text="{Binding Cognom}"/>
+                            <TextBlock Name="txtEmail" Text="{Binding Email}" Foreground="Blue"/>
+                        </StackPanel>
+                        <Image Name="imgAlumne" Source="{Binding Foto}" Width="120" Height="120"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
